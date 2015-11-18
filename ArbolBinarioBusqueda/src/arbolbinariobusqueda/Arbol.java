@@ -6,30 +6,51 @@ public class Arbol {
     
     Nodo raiz=null;
     
-   void Insertar(int dato){
+   /*void Insertar(int pDato){
        
-       Nodo NewHoja = new Nodo(dato);
+       Nodo n = new Nodo(pDato);
        
        if(raiz==null){
-           
-           raiz = NewHoja;
-           
-       }else{
+           raiz = n;
        
-           if(raiz.dato == NewHoja.dato){
+       }else{
+       if(raiz.dato == n.dato){
               
            }else{
            
-               if(raiz.dato<NewHoja.dato){
-               
-                   raiz.derecha = NewHoja;
+               if(n.dato < raiz.dato){
+               raiz.izquierda = n;
                    
                }else{
-               
-                   raiz.izquierda = NewHoja;
+               raiz.derecha = n;
                }
            }
        }  
-   } 
+   }*/
     
-}
+    void insertar (int pDato){
+        Nodo n = new Nodo (pDato);
+        
+         if(raiz==null){
+           raiz = n;
+       
+       }else{
+             Nodo aux=raiz, padre=null;
+             while (aux!=null){
+                 padre = aux;
+                 if(n.dato > aux.dato){
+                     aux = aux.derecha;
+                 }else{
+                     aux = aux.izquierda;
+                 }
+             }
+             if (n.dato > padre.dato){
+                  padre.derecha = n;
+             }else {
+                 padre.izquierda = n;
+             }
+                 
+         }
+    }
+    
+ }
