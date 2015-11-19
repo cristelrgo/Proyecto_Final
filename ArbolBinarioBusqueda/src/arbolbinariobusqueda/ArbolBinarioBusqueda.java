@@ -10,28 +10,27 @@ public class ArbolBinarioBusqueda {
     arbolb.insertar(24);
     arbolb.insertar(4);
     arbolb.insertar(30);
-    arbolb.insertar(21);
     arbolb.insertar(5);
-    
+    arbolb.insertar(21);
     
 
+    
     System.out.println("Raiz: "+arbolb.raiz.dato);
-    System.out.println("Derecha: "+arbolb.raiz.derecha.dato);
-    System.out.println("Izquierda: "+arbolb.raiz.izquierda.dato);
-    System.out.println("hijo derecho de  24: "+arbolb.raiz.derecha.derecha.dato);
-        System.out.println("Hijo izquierdo de 24: "+arbolb.raiz.derecha.izquierda.dato);
-        System.out.println("Hijo derecho de 4:"+ arbolb.raiz.izquierda.derecha.dato);
-    System.out.println("hijo derecho de 20: "+ arbolb.buscaHijoDer(20));
-    System.out.println("hijo derecho de 4: "+arbolb.buscaHijoDer(4));
+    System.out.println("Hijo derecho de raiz: "+arbolb.buscaHijoDer(20));
+    System.out.println("Hijo izquierdo de raiz: "+arbolb.buscaHijoIzq(20)+"\n");
+    System.out.println("eliminar 24  "+arbolb.eliminar(24));
         
-    System.out.println("Recorrido Preorder: ");
+        
+   
+       
+    System.out.println("\nRecorrido Preorder: ");
     arbolb.recorridoPreorden();
     
-    System.out.println("\nRecorrido Posorder");
+    System.out.println("\n\nRecorrido Posorder");
         arbolb.recorridoPosorden();
         
-        System.out.println("\nRecorrido Inorder");
-        arbolb.recorridoInorden();
+    System.out.println("\n\nRecorrido Inorder");
+    arbolb.recorridoInorden();
    
     }
     
