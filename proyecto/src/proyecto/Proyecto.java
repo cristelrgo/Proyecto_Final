@@ -3,8 +3,7 @@ package proyecto;
 public class Proyecto {
 
     public static void main(String[] args) {
- 
-    Arbol arbolb = new Arbol();       
+       Arbol arbolb = new Arbol();       
            
     arbolb.insertar(20);
     arbolb.insertar(25);
@@ -38,6 +37,5 @@ public class Proyecto {
     arbolb.recorridoInorden();
    
     }
+    }
     
-}
-

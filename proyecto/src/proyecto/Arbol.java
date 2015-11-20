@@ -1,7 +1,10 @@
+
 package proyecto;
 
+
 public class Arbol {
-    Nodo raiz=null;
+    
+     Nodo raiz=null;
    
     void insertar (int pDato){
         Nodo n = new Nodo (pDato);
