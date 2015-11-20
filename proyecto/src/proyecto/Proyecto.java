@@ -3,7 +3,7 @@ package proyecto;
 public class Proyecto {
 
     public static void main(String[] args) {
-       Arbol arbolb = new Arbol();       
+    Arbol arbolb = new Arbol();       
            
     arbolb.insertar(20);
     arbolb.insertar(25);
@@ -18,24 +18,29 @@ public class Proyecto {
 
     
     System.out.println("Raiz: "+arbolb.raiz.dato);
-    System.out.println("Hijo derecho de raiz: "+arbolb.buscaHijoDer(20));
-    System.out.println("Hijo izquierdo de raiz: "+arbolb.buscaHijoIzq(20)+"\n");
+    System.out.println("Hijo derecho de raiz: ");
+    arbolb.buscaHijoDer(20);
+    System.out.println("Hijo izquierdo de raiz: ");
+    arbolb.buscaHijoIzq(20);
     System.out.println("borramos el nodo 25:\n ");
-    arbolb.eliminar(25);
-    System.out.println("Hijo derecho de 26: "+arbolb.buscaHijoDer(26));
-    System.out.println("Hijo derecho de 26: "+arbolb.buscaHijoIzq(26));
+    arbolb.elimina(25);
+    System.out.println("Hijo derecho de 26: ");
+    arbolb.buscaHijoDer(26);
+    System.out.println("Hijo izquierdo de 2: ");
+    arbolb.buscaHijoIzq(2);
         
    
        
     System.out.println("\nRecorrido Preorder: ");
-    arbolb.recorridoPreorden();
+    arbolb.imprimePre();
     
     System.out.println("\n\nRecorrido Posorder");
-    arbolb.recorridoPosorden();
+    arbolb.imprimePos();
         
     System.out.println("\n\nRecorrido Inorder");
-    arbolb.recorridoInorden();
+    arbolb.imprimeIno();
+  
    
     }
     }
-    
+

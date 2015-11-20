@@ -1,7 +1,6 @@
 
 package proyecto;
 
-
 public class Arbol {
     
      Nodo raiz=null;
@@ -30,12 +29,12 @@ public class Arbol {
          }
     }
     
+    
     public Nodo buscar(int valor){
-        Nodo tem = raiz;
-        Nodo aux = tem;
-        
-        while (aux.dato!=valor){
-            if (valor<aux.dato){
+    
+        Nodo aux = raiz;
+        while(aux.dato != valor){
+            if(valor < aux.dato){
                 aux = aux.izquierda;
             }else{
                 aux = aux.derecha;
@@ -47,57 +46,68 @@ public class Arbol {
         return aux;
     }
     
-    public int buscaHijoDer(int valor){
-   
-      return  buscar(valor).derecha.dato;   
-    }
+  public void buscaHijoDer(int valor){
     
-    public int buscaHijoIzq(int valor){
+        if (buscar(valor).derecha != null){
         
-        return buscar(valor).izquierda.dato;
+        System.out.print(buscar(valor).derecha.dato+" \n");
+        
+        }else{  
+        System.out.print("na");
+        }
+    }
+   public void buscaHijoIzq(int valor){
+    
+        if (buscar(valor).izquierda != null){
+        
+        System.out.print(buscar(valor).izquierda.dato+" \n");
+        
+        }else{  
+        System.out.print("na");
+        }
     }
     
     
-    void recorridoPreorden(){
-        imprimePre(raiz);
+    void imprimePre(){
+        recorridoPre(raiz);
     }
     
-    void imprimePre(Nodo nodo){
+    void recorridoPre(Nodo nodo){
         if(nodo == null)
             return;
          
         System.out.print(nodo.dato + " ");     
-        imprimePre(nodo.izquierda);   
-        imprimePre(nodo.derecha);     
+        recorridoPre(nodo.izquierda);   
+        recorridoPre(nodo.derecha);     
     }
      
-    void recorridoInorden() {
-        imprimeIno(raiz);
+    void imprimeIno() {
+        recorridoInorden(raiz);
     }
      
-    void imprimeIno(Nodo nodo){
+    void recorridoInorden(Nodo nodo){
         if(nodo == null)
             return;
          
-        imprimeIno(nodo.izquierda);
+        recorridoInorden(nodo.izquierda);
         System.out.print(nodo.dato + " ");
-        imprimeIno(nodo.derecha);
+        recorridoInorden(nodo.derecha);
     }
      
-    void recorridoPosorden(){
-        imprimePos(raiz);        
+    void imprimePos(){
+        recorridoPosorden(raiz);        
     }
      
-    void imprimePos(Nodo nodo){
+    void recorridoPosorden(Nodo nodo){
         if( nodo == null )
             return;
          
-        imprimePos(nodo.izquierda);
-        imprimePos(nodo.derecha);
+        recorridoPosorden(nodo.izquierda);
+        recorridoPosorden(nodo.derecha);
         System.out.print(nodo.dato + " ");
     }
     
-    public boolean eliminar(int pDato){
+    public boolean elimina(int pDato){
         Nodo aux=raiz;
         Nodo tem=raiz;
         boolean hijoIzq = true;
